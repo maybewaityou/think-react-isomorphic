@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <title>think react isomorphic</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+  <div id="root"><%- markup %></div>
+  <script>
+    window.__INITIAL_STATE__ = <%- JSON.stringify(targetState) %>;
+  </script>
+  <script src="/static/app.bundle.js"></script>
+</body>
+</html>

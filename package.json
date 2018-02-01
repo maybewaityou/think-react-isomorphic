@@ -32,6 +32,7 @@
   },
   "homepage": "https://github.com/maybewaityou/think-react-isomorphic#readme",
   "dependencies": {
+    "ejs": "^2.5.7",
     "koa": "^2.4.1",
     "koa-bodyparser": "^4.2.0",
     "koa-json": "^2.0.2",
@@ -48,7 +49,6 @@
     "mario-functional": "0.0.5",
     "mario-pure": "0.0.9",
     "mario-utilities": "0.0.40",
-    "pug": "^2.0.0-rc.4",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "request": "^2.83.0",

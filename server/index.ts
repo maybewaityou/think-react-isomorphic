@@ -39,7 +39,7 @@ app.use(json());
 app.use(serve(path.resolve(__dirname, '../public')));
 // template
 app.use(views(path.resolve(__dirname, './views'), {
-  extension: 'pug',
+  extension: 'ejs',
 }));
 // logger
 app.use(async (ctx: Koa.Context, next: () => Promise<any>) => {

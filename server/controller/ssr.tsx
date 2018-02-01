@@ -12,25 +12,6 @@ import { renderToString } from 'react-dom/server';
 
 import { Root } from '../../src/index';
 
-function renderFullPage(markup: string, targetState: any) {
-  return `
-    <!DOCTYPE html>
-    <html lang="zh">
-    <head>
-      <meta charset="UTF-8">
-      <link rel="stylesheet" href="/stylesheets/style.css">
-    </head>
-    <body>
-      <div id="root">${markup}</div>
-      <script>
-        window.__INITIAL_STATE__ = ${JSON.stringify(targetState)};
-      </script>
-      <script src="/static/app.bundle.js"></script>
-    </body>
-    </html>
-  `;
-}
-
 export default {
 
   async index(ctx: Koa.Context, next: () => Promise<any>) {
@@ -44,14 +25,12 @@ export default {
     //   },
     // });
 
-    ctx.body = renderFullPage(renderToString((
-        // <Provider store={store}>
-          <Root />
-        // </Provider>
-      )), {});
-    // await ctx.render('index', {
-    //   title: 'Hello Koa 2!',
-    // });
+    const markup = renderToString(<Root />);
+    const targetState = {
+      name: 'zhangsan',
+      age: 20,
+    };
+    await ctx.render('index', { markup, targetState });
     await next();
   },
 
