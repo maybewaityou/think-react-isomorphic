@@ -22,7 +22,7 @@
       "@manager": ["src/main/manager/index.ts"],
       "@utilities": ["src/main/utilities/index.ts"],
       "@vendor": ["src/main/vendor/index.ts"],
-      "@actions": ["src/dataflow/actions/index.ts"],
+      "@actions": ["src/dataflow/actions/index.ts"]
     },
     "target": "es2015",
     "module": "commonjs",
