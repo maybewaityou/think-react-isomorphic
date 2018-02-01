@@ -53736,9 +53736,9 @@ const testReducer = mario_ducks_1.acceptActions((state = initialTestState, actio
 }, [
     index_1.TEST_ACTION,
 ]);
-exports.initialState = {
+exports.initialState = immutable_1.fromJS({
     testReducer: initialTestState,
-};
+});
 exports.default = {
     testReducer,
 };
