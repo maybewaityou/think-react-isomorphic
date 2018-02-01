@@ -5,9 +5,9 @@
  * description:
  *
  */
+import { Provider } from 'mario-ducks';
 import * as React from 'react';
 import { hydrate } from 'react-dom';
-import { Provider } from 'react-redux';
 
 // import rootReducer, { initialState } from '../src/dataflow/reducer';
 // import configStore from '../src/dataflow/store';
