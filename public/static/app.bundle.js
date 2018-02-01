@@ -60,12 +60,12 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./browser/index.tsx");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./browser/index.ts");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./browser/index.tsx":
+/***/ "./browser/components/App.tsx":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -74,7 +74,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const immutable_1 = __webpack_require__("./node_modules/immutable/dist/immutable.js");
 const mario_ducks_1 = __webpack_require__("./node_modules/mario-ducks/es/index.js");
 const React = __webpack_require__("./node_modules/react/index.js");
-const react_dom_1 = __webpack_require__("./node_modules/react-dom/index.js");
 const index_1 = __webpack_require__("./src/dataflow/epic/index.ts");
 const index_2 = __webpack_require__("./src/dataflow/logic/index.ts");
 const index_3 = __webpack_require__("./src/dataflow/middleware/index.ts");
@@ -87,10 +86,22 @@ const $initialState = Object.keys(initialState).reduce((obj, key) => {
     obj[key] = immutable_1.fromJS(initialState[key]);
     return obj;
 }, {});
-console.log($initialState);
 const store = mario_ducks_1.configureStore($initialState, index_6.networkClient, index_4.rootReducer, index_2.rootLogic, index_1.rootEpic, index_3.default);
-react_dom_1.hydrate((React.createElement(mario_ducks_1.Provider, { store: store },
-    React.createElement(index_5.Root, null))), document.getElementById('root'));
+exports.default = (React.createElement(mario_ducks_1.Provider, { store: store },
+    React.createElement(index_5.Root, null)));
+
+
+/***/ }),
+
+/***/ "./browser/index.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_dom_1 = __webpack_require__("./node_modules/react-dom/index.js");
+const App_1 = __webpack_require__("./browser/components/App.tsx");
+react_dom_1.hydrate(App_1.default, document.getElementById('root'));
 
 
 /***/ }),

@@ -31,7 +31,7 @@ function fullPath(subPath) {
 
 module.exports = {
   entry: {
-    app: './browser/index.tsx',
+    app: './browser/index',
   },
   output: {
     // filename: '[name].bundle.[hash:8].js',
