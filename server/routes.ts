@@ -11,9 +11,10 @@ import * as Router from 'koa-router';
 
 import App from './controller/app';
 import HotUpdate from './controller/hot-update';
+import SSR from './controller/ssr';
 
 const router = new Router({
-  prefix: '/server',
+  // prefix: '/server',
 });
 
 // // GraphQL
@@ -24,7 +25,8 @@ const router = new Router({
 
 // RESTful
 router
-  .get('/index', App.index)
+  .get('/index', SSR.index)
+  // .get('/index', App.index)
   .get('/checkForUpdates', HotUpdate.checkForUpdates)
   // http://localhost:9999/server/download?fileName=bundle.zip&platform=ios&moduleFolder=main&isIncrementalPacket=true
   .get('/download', HotUpdate.download);
