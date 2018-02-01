@@ -17,7 +17,7 @@ const __BROWSER__ = typeof window !== 'undefined';
 export default class extends PureComponent<any, any> {
 
   public render() {
-    console.log(this.props);
+    console.log(this.props.$testData);
     return __BROWSER__ ? <h3>browser render ~ </h3> : <h3>server render ~ </h3>;
   }
 

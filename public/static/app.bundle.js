@@ -53990,7 +53990,7 @@ const React = __webpack_require__("./node_modules/react/index.js");
 const __BROWSER__ = typeof window !== 'undefined';
 let default_1 = class extends mario_pure_1.PureComponent {
     render() {
-        console.log(this.props);
+        console.log(this.props.$testData);
         return __BROWSER__ ? React.createElement("h3", null, "browser render ~ ") : React.createElement("h3", null, "server render ~ ");
     }
 };
