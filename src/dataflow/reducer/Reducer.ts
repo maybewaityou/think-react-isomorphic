@@ -28,9 +28,9 @@ const testReducer = acceptActions((state = initialTestState, action: IAction) =>
   TEST_ACTION,
 ]);
 
-export const initialState = {
+export const initialState = fromJS({
   testReducer: initialTestState,
-};
+});
 
 export default {
   testReducer,
