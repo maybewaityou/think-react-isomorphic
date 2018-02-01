@@ -7141,9 +7141,10 @@ exports.Root = index_1.default;
 Object.defineProperty(exports, "__esModule", { value: true });
 const mario_pure_1 = __webpack_require__("./node_modules/mario-pure/es/index.js");
 const React = __webpack_require__("./node_modules/react/index.js");
+const __BROWSER__ = typeof window !== 'undefined';
 class default_1 extends mario_pure_1.PureComponent {
     render() {
-        return (React.createElement("div", null, "asddsaasd"));
+        return __BROWSER__ ? React.createElement("div", null, "browser render ~ ") : React.createElement("div", null, "server render ~ ");
     }
 }
 exports.default = default_1;
