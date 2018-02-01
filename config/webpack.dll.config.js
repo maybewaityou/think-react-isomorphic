@@ -9,7 +9,7 @@ const path = require('path');
 const DllPlugin = require('webpack/lib/DllPlugin');
 const parallelUglifyPluginGenerator = require('./plugin/ParallelUglifyPluginGenerator');
 
-const distPath = 'dist:dll';
+const distPath = 'public/static/dist:dll';
 
 module.exports = {
   entry: {

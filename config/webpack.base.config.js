@@ -19,7 +19,7 @@ const HappyPack = require('happypack');
 const srcPath = 'src';
 const assetsPath = 'assets';
 const modulesPath = 'node_modules';
-const distPath = 'public/static';
+const distPath = 'public/static/dist';
 const publicPath = 'public';
 const manifestRootPath = `../${distPath}:dll`;
 
