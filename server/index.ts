@@ -36,7 +36,7 @@ app.use(bodyParser({
 }));
 app.use(json());
 // resource
-app.use(serve(path.resolve(__dirname, './public')));
+app.use(serve(path.resolve(__dirname, '../public')));
 // template
 app.use(views(path.resolve(__dirname, './views'), {
   extension: 'pug',
