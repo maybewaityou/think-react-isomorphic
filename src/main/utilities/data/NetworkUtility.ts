@@ -7,7 +7,7 @@
  */
 import { INetworkConfig, log, NetworkClient, Observable, toString } from 'mario-utilities';
 
-import { Constant } from '@constant';
+import { Constant } from '../../constant/index';
 
 export const NetworkUtility = {
 

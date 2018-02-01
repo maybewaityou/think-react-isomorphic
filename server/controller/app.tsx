@@ -6,31 +6,35 @@
  *
  */
 import * as Koa from 'koa';
-import { Provider } from 'mario-ducks';
+import { configureStore, Provider } from 'mario-ducks';
 import * as React from 'react';
 import { renderToString } from 'react-dom/server';
 
+import { TEST_ACTION } from '../../src/dataflow/actions/index';
+import { rootEpic } from '../../src/dataflow/epic/index';
+import { rootLogic } from '../../src/dataflow/logic/index';
+import middlewares from '../../src/dataflow/middleware/index';
+import { initialState, rootReducer } from '../../src/dataflow/reducer/index';
 import { Root } from '../../src/index';
+import { networkClient } from '../../src/main/utilities/data/index';
 
 export default {
 
   async index(ctx: Koa.Context, next: () => Promise<any>) {
-    // const store = configStore(initialState, rootReducer);
-    //
-    // store.dispatch({
-    //   type: TEST_ACTION,
-    //   payload: {
-    //     name: 'lishishi',
-    //     age: 28,
-    //   },
-    // });
+    const store = configureStore(initialState, networkClient, rootReducer, rootLogic, rootEpic, middlewares);
 
-    const markup = renderToString(<Root />);
-    const targetState = {
-      name: 'zhangsan',
-      age: 20,
-    };
-    await ctx.render('index', { markup, targetState });
+    store.dispatch({
+      type: TEST_ACTION,
+      payload: {
+        name: 'lishishi',
+        age: 28,
+      },
+    });
+
+    await ctx.render('index', {
+      markup: renderToString(<Root />),
+      targetState: store.getState(),
+    });
     await next();
   },
 

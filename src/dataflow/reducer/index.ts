@@ -6,4 +6,4 @@
  *
  */
 
-export { default as rootReducer } from './Reducer';
+export { default as rootReducer, initialState } from './Reducer';

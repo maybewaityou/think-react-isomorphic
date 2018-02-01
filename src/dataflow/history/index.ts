@@ -5,8 +5,8 @@
  * description:
  *
  */
-import createHistory from 'history/createBrowserHistory';
+// import createHistory from 'history/createBrowserHistory';
 
-const history = createHistory();
+// const history = createHistory();
 
-export default history;
+// export default history;

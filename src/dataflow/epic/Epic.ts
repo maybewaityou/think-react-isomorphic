@@ -5,10 +5,6 @@
  * description:
  *
  */
-import { homeEpics } from '../../pages/home/index';
-import { loginEpics } from '../../pages/login/index';
 
 export default [
-  ...loginEpics,
-  ...homeEpics,
 ];

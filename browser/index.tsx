@@ -5,19 +5,22 @@
  * description:
  *
  */
-import { Provider } from 'mario-ducks';
+import { configureStore, Provider } from 'mario-ducks';
 import * as React from 'react';
 import { hydrate } from 'react-dom';
 
-// import rootReducer, { initialState } from '../src/dataflow/reducer';
-// import configStore from '../src/dataflow/store';
+import { rootEpic } from '../src/dataflow/epic/index';
+import { rootLogic } from '../src/dataflow/logic/index';
+import middlewares from '../src/dataflow/middleware/index';
+import { initialState, rootReducer } from '../src/dataflow/reducer/index';
 import { Root } from '../src/index';
+import { networkClient } from '../src/main/utilities/data/index';
 
-// const w: any = window;
-// const store = configStore(w.__INITIAL_STATE__, rootReducer);
+const w: any = window;
+const store = configureStore(w.__INITIAL_STATE__, networkClient, rootReducer, rootLogic, rootEpic, middlewares);
 
 hydrate((
-  // <Provider store={store}>
+  <Provider store={store}>
     <Root />
-  // </Provider>
+  </Provider>
 ), document.getElementById('root'));
