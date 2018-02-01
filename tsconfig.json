@@ -2,8 +2,18 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "redux": ["node_modules/redux/index.d.ts"],
+      "redux-logic": ["node_modules/redux-logic/index.d.ts"],
+      "redux-observable": ["node_modules/redux-observable/index.d.ts"],
+      "immutable": ["node_modules/immutable/dist/immutable.d.ts"],
       "rxjs": ["node_modules/rxjs/Rx.d.ts"],
-      "mario-utilities": ["node_modules/mario-utilities/index.d.ts"]
+      "mario-ducks": ["node_modules/mario-ducks/index.d.ts"],
+      "mario-utilities": ["node_modules/mario-utilities/index.d.ts"],
+      "mario-pure": ["node_modules/mario-pure/index.d.ts"],
+      "mario-functional": ["node_modules/mario-functional/index.d.ts"],
+      "mario-architecture-components": ["node_modules/mario-architecture-components/index.d.ts"],
+      "mario-extension": ["node_modules/mario-extension/index.d.ts"],
+      "styled-components": ["node_modules/styled-components/typings/styled-components.d.ts"],
     },
     "target": "esnext",
     "module": "commonjs",
