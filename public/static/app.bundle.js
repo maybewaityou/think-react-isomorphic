@@ -82,7 +82,13 @@ const index_4 = __webpack_require__("./src/dataflow/reducer/index.ts");
 const index_5 = __webpack_require__("./src/index.ts");
 const index_6 = __webpack_require__("./src/main/utilities/data/index.ts");
 const w = window;
-const store = mario_ducks_1.configureStore(immutable_1.fromJS(w.__INITIAL_STATE__), index_6.networkClient, index_4.rootReducer, index_2.rootLogic, index_1.rootEpic, index_3.default);
+const initialState = w.__INITIAL_STATE__;
+const $initialState = Object.keys(initialState).reduce((obj, key) => {
+    obj[key] = immutable_1.fromJS(initialState[key]);
+    return obj;
+}, {});
+console.log($initialState);
+const store = mario_ducks_1.configureStore($initialState, index_6.networkClient, index_4.rootReducer, index_2.rootLogic, index_1.rootEpic, index_3.default);
 react_dom_1.hydrate((React.createElement(mario_ducks_1.Provider, { store: store },
     React.createElement(index_5.Root, null))), document.getElementById('root'));
 
@@ -53736,9 +53742,9 @@ const testReducer = mario_ducks_1.acceptActions((state = initialTestState, actio
 }, [
     index_1.TEST_ACTION,
 ]);
-exports.initialState = immutable_1.fromJS({
+exports.initialState = {
     testReducer: initialTestState,
-});
+};
 exports.default = {
     testReducer,
 };
