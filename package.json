@@ -1,0 +1,65 @@
+{
+  "name": "think-react-isomorphic",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "watch": "tsc -w",
+    "start": "nodemon --watch 'server/**/*' -e ts,tsx --exec 'ts-node' ./server/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maybewaityou/think-react-isomorphic.git"
+  },
+  "keywords": [
+    "koa",
+    "think"
+  ],
+  "author": "MeePwn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maybewaityou/think-react-isomorphic/issues"
+  },
+  "homepage": "https://github.com/maybewaityou/think-react-isomorphic#readme",
+  "dependencies": {
+    "koa": "^2.4.1",
+    "koa-bodyparser": "^4.2.0",
+    "koa-json": "^2.0.2",
+    "koa-json-error": "^3.1.2",
+    "koa-logger": "^3.1.0",
+    "koa-onerror": "^4.0.0",
+    "koa-router": "^7.3.0",
+    "koa-send": "^4.1.1",
+    "koa-session": "^5.5.1",
+    "koa-static": "^4.0.2",
+    "koa-views": "^6.1.2",
+    "mario-utilities": "^0.0.37",
+    "pug": "^2.0.0-rc.4",
+    "request": "^2.83.0",
+    "request-promise-native": "^1.0.5",
+    "rxjs": "^5.5.2"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.0.40",
+    "@types/koa-bodyparser": "^3.0.26",
+    "@types/koa-json": "^2.0.18",
+    "@types/koa-json-error": "^3.1.2",
+    "@types/koa-logger": "^2.0.3",
+    "@types/koa-router": "^7.0.25",
+    "@types/koa-send": "^3.3.1",
+    "@types/koa-session": "^3.0.6",
+    "@types/koa-static": "^3.0.2",
+    "@types/koa-views": "^2.0.3",
+    "@types/request-promise-native": "^1.0.10",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "chai": "^4.1.2",
+    "enzyme": "^3.2.0",
+    "mocha": "^4.0.1",
+    "nodemon": "^1.12.1",
+    "ts-node": "^3.3.0",
+    "tslint": "^5.8.0",
+    "typescript": "^2.6.1"
+  }
+}
