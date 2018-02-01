@@ -9,15 +9,15 @@ import * as React from 'react';
 import { hydrate } from 'react-dom';
 import { Provider } from 'react-redux';
 
-import rootReducer, { initialState } from '../src/dataflow/reducer';
-import configStore from '../src/dataflow/store';
+// import rootReducer, { initialState } from '../src/dataflow/reducer';
+// import configStore from '../src/dataflow/store';
 import { Root } from '../src/index';
 
-const w: any = window;
-const store = configStore(w.__INITIAL_STATE__, rootReducer);
+// const w: any = window;
+// const store = configStore(w.__INITIAL_STATE__, rootReducer);
 
 hydrate((
-  <Provider store={store}>
+  // <Provider store={store}>
     <Root />
-  </Provider>
+  // </Provider>
 ), document.getElementById('root'));
