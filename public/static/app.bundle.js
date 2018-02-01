@@ -71,6 +71,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
+const immutable_1 = __webpack_require__("./node_modules/immutable/dist/immutable.js");
 const mario_ducks_1 = __webpack_require__("./node_modules/mario-ducks/es/index.js");
 const React = __webpack_require__("./node_modules/react/index.js");
 const react_dom_1 = __webpack_require__("./node_modules/react-dom/index.js");
@@ -81,7 +82,7 @@ const index_4 = __webpack_require__("./src/dataflow/reducer/index.ts");
 const index_5 = __webpack_require__("./src/index.ts");
 const index_6 = __webpack_require__("./src/main/utilities/data/index.ts");
 const w = window;
-const store = mario_ducks_1.configureStore(w.__INITIAL_STATE__, index_6.networkClient, index_4.rootReducer, index_2.rootLogic, index_1.rootEpic, index_3.default);
+const store = mario_ducks_1.configureStore(immutable_1.fromJS(w.__INITIAL_STATE__), index_6.networkClient, index_4.rootReducer, index_2.rootLogic, index_1.rootEpic, index_3.default);
 react_dom_1.hydrate((React.createElement(mario_ducks_1.Provider, { store: store },
     React.createElement(index_5.Root, null))), document.getElementById('root'));
 
