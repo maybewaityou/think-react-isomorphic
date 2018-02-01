@@ -6,8 +6,17 @@
   "scripts": {
     "test": "mocha",
     "watch": "tsc -w",
-    "start": "nodemon --watch 'server/**/*' -e ts,tsx --exec 'ts-node' ./server/index.ts"
+    "start": "nodemon --watch 'server/**/*' -e ts,tsx --exec 'ts-node' ./server/index.ts",
+    "clear": "rm -rf dist && rm -rf dist:dll && rm -rf .uglify-cache && rm -rf .uglify-dll-cache && rm -rf stats.json",
+    "build:dll": "webpack --config config/webpack.dll.config.js",
+    "build:dev": "webpack --config config/webpack.dev.config.js --profile --json > stats.json",
+    "build:pro": "webpack --config config/webpack.pro.config.js",
+    "analyzer": "webpack-bundle-analyzer stats.json",
+    "lint": "tslint -c tslint.json 'src/**/*.*'"
   },
+  "pre-commit": [
+    "lint"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/maybewaityou/think-react-isomorphic.git"
@@ -68,6 +77,10 @@
     "nodemon": "^1.12.1",
     "ts-node": "^3.3.0",
     "tslint": "^5.8.0",
-    "typescript": "^2.6.1"
+    "typescript": "^2.6.1",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.11.1",
+    "webpack-merge": "^4.1.1",
+    "webpack-parallel-uglify-plugin": "^1.0.2"
   }
 }

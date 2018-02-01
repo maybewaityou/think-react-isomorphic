@@ -1,0 +1,16 @@
+/**
+ * Created by MeePwn
+ * https://github.com/maybewaityou
+ *
+ * description:
+ *
+ */
+
+export const LOGIN_USER_NAME_ACTION = 'LOGIN_USER_NAME_ACTION';
+export const LOGIN_PASSWORD_ACTION = 'LOGIN_PASSWORD_ACTION';
+export const CLEAR_LOGIN_USER_NAME_ACTION = 'CLEAR_LOGIN_USER_NAME_ACTION';
+export const CLEAR_LOGIN_PASSWORD_ACTION = 'CLEAR_LOGIN_PASSWORD_ACTION';
+export const LOGIN_ACTION = 'LOGIN_ACTION';
+export const LOGIN_SUCCESS_ACTION = 'LOGIN_SUCCESS_ACTION';
+export const LOGIN_FAILURE_ACTION = 'LOGIN_FAILURE_ACTION';
+export const LOGOUT_ACTION = 'LOGOUT_ACTION';
