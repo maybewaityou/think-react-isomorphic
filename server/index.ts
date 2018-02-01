@@ -23,7 +23,7 @@ import Exception from './model/exception';
 import router from './routes';
 
 const app = new Koa();
-app.keys = ['think-koa'];
+app.keys = [ 'think-react-isomorphic' ];
 
 // error handler
 app.use(error({ format: (err: Exception) => err.description }));
@@ -32,7 +32,7 @@ app.use(logger());
 app.use(session(app));
 app.use(cors());
 app.use(bodyParser({
-  enableTypes: ['json', 'form', 'text'],
+  enableTypes: [ 'json', 'form', 'text' ],
 }));
 app.use(json());
 // resource
@@ -53,9 +53,9 @@ app.use(router.routes());
 app.use(router.allowedMethods());
 // upload
 app.use(uploader());
-// proxy
-app.use(proxy({
-  host: 'http://10.240.81.230:7001',
-}));
+// // proxy
+// app.use(proxy({
+//   host: 'http://10.240.81.230:7001',
+// }));
 
 app.listen(9999);
