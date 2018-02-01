@@ -32,7 +32,11 @@ export default {
     });
 
     await ctx.render('index', {
-      markup: renderToString(<Root />),
+      markup: renderToString((
+        <Provider store={store}>
+          <Root />
+        </Provider>
+      )),
       targetState: store.getState(),
     });
     await next();

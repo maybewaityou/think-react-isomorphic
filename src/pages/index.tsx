@@ -11,9 +11,9 @@ import * as React from 'react';
 
 const __BROWSER__ = typeof window !== 'undefined';
 
-// @bind((state: any) => ({
-//   $testData: state.testReducer,
-// }))
+@bind((state: any) => ({
+  $testData: state.testReducer,
+}))
 export default class extends PureComponent<any, any> {
 
   public render() {

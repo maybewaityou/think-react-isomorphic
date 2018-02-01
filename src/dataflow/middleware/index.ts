@@ -15,5 +15,5 @@ export default [
   createImmutableActionMiddleware([ BATCH_ACTIONS ]),
   // createImmutableActionMiddleware([ BATCH_ACTIONS, CALL_HISTORY_METHOD, LOCATION_CHANGE ]),
   // routerMiddleware(history),
-  loggerMiddleware,
+  // loggerMiddleware,
 ];

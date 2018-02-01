@@ -53703,27 +53703,9 @@ exports.rootLogic = Logic_1.default;
 
 Object.defineProperty(exports, "__esModule", { value: true });
 const mario_ducks_1 = __webpack_require__("./node_modules/mario-ducks/es/index.js");
-const LoggerMiddleware_1 = __webpack_require__("./src/dataflow/middleware/logger/LoggerMiddleware.ts");
 exports.default = [
     mario_ducks_1.createImmutableActionMiddleware([mario_ducks_1.BATCH_ACTIONS]),
-    LoggerMiddleware_1.default,
 ];
-
-
-/***/ }),
-
-/***/ "./src/dataflow/middleware/logger/LoggerMiddleware.ts":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-const mario_utilities_1 = __webpack_require__("./node_modules/mario-utilities/es/index.js");
-exports.default = (store) => (next) => (action) => {
-    mario_utilities_1.log(`== action start ===>>>> ${mario_utilities_1.toString(action)}`);
-    next(action);
-    mario_utilities_1.log(`== action end ===>>>> ${mario_utilities_1.toString(action)}`);
-};
 
 
 /***/ }),
@@ -53995,16 +53977,28 @@ exports.networkClient = NetworkUtility_1.networkClient;
 
 "use strict";
 
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
 Object.defineProperty(exports, "__esModule", { value: true });
+const mario_ducks_1 = __webpack_require__("./node_modules/mario-ducks/es/index.js");
 const mario_pure_1 = __webpack_require__("./node_modules/mario-pure/es/index.js");
 const React = __webpack_require__("./node_modules/react/index.js");
 const __BROWSER__ = typeof window !== 'undefined';
-class default_1 extends mario_pure_1.PureComponent {
+let default_1 = class extends mario_pure_1.PureComponent {
     render() {
         console.log(this.props);
         return __BROWSER__ ? React.createElement("h3", null, "browser render ~ ") : React.createElement("h3", null, "server render ~ ");
     }
-}
+};
+default_1 = __decorate([
+    mario_ducks_1.bind((state) => ({
+        $testData: state.testReducer,
+    }))
+], default_1);
 exports.default = default_1;
 
 
