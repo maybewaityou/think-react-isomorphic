@@ -8,8 +8,6 @@
 import * as React from 'react';
 
 import { IRouteConfig, renderRoutes, routeLoader } from '../../../main/vendor/index';
-import Child from '../../../pages/Child';
-import GrandChild from '../../../pages/GrandChild';
 import Home from '../../../pages/Home';
 import Root from '../../../pages/index';
 
@@ -24,12 +22,10 @@ const routesConfig: any[] = [
       },
       {
         path: '/child/:id',
-        component: Child,
-        // component: routeLoader(() => require(/* webpackChunkName: "child" */'../../../pages/Child')),
+        component: routeLoader(() => import(/* webpackChunkName: "child" */'../../../pages/Child')),
         routes: [{
           path: '/child/:id/grand-child',
-          // component: routeLoader(() => require(/* webpackChunkName: "grand-child" */'../../../pages/GrandChild')),
-          component: GrandChild,
+          component: routeLoader(() => import(/* webpackChunkName: "grand-child" */'../../../pages/GrandChild')),
         }],
       },
     ],
