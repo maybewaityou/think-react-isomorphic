@@ -8,9 +8,11 @@
 import { fromJS } from 'immutable';
 import { configureStore, Provider } from 'mario-ducks';
 import * as React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+// import { BrowserRouter as Router } from 'react-router-dom';
+import { ConnectedRouter as Router } from 'react-router-redux';
 
 import { rootEpic } from '../../src/dataflow/epic/index';
+import history from '../../src/dataflow/history/index';
 import { rootLogic } from '../../src/dataflow/logic/index';
 import middlewares from '../../src/dataflow/middleware/index';
 import { rootReducer } from '../../src/dataflow/reducer/index';
@@ -31,7 +33,7 @@ const store = configureStore(initialState, networkClient, rootReducer, rootLogic
 
 export default (
   <Provider store={store}>
-    <Router>
+    <Router history={history}>
       {renderRoutes(routesConfig)}
     </Router>
   </Provider>

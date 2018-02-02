@@ -5,8 +5,10 @@
  * description:
  *
  */
-// import createHistory from 'history/createBrowserHistory';
+import createHistory from 'history/createBrowserHistory';
 
-// const history = createHistory();
+const __BROWSER__ = typeof window !== 'undefined';
 
-// export default history;
+const history = __BROWSER__ ? createHistory() : undefined;
+
+export default history;

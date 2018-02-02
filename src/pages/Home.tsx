@@ -5,23 +5,28 @@
  * description:
  *
  */
+import { bind } from 'mario-ducks';
 import { PureComponent } from 'mario-pure';
 import { log, NetworkClient } from 'mario-utilities';
 import * as React from 'react';
 import { matchPath } from 'react-router';
+import { goForward, push } from 'react-router-redux';
 
 import { Context } from '../main/context/index';
 
+@bind((state: any) => ({
+
+}))
 export default class extends PureComponent<any, any> {
 
   public handleClick = () => {
-    this.props.history.goForward();
+    this.props.dispatch(goForward());
   }
 
   public render() {
     return (
       <div>
-        Home
+        <h2>Home</h2>
         <button onClick={this.handleClick}>go fosrward</button>
         <button onClick={() => {
           // NetworkClient.getInstance()
@@ -29,10 +34,10 @@ export default class extends PureComponent<any, any> {
           //   .subscribe((response: any) => {}, (error: Error) => {});
         }}>send request</button>
         <button onClick={() => {
-          this.props.history.push('/child/123');
+          this.props.dispatch(push('/child/123'));
         }}>link to child page</button>
         <button onClick={() => {
-          this.props.history.push('/child/123/grand-child');
+          this.props.dispatch(push('/child/123/grand-child'));
         }}>link to grand child page</button>
       </div>
     );

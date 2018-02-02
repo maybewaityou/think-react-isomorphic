@@ -9,7 +9,9 @@ import * as Koa from 'koa';
 import { configureStore, Provider } from 'mario-ducks';
 import * as React from 'react';
 import { StaticRouter as Router } from 'react-router-dom';
+// import { ConnectedRouter as _ConnectedRouter } from 'react-router-redux';
 
+// import history from '../../../src/dataflow/history/index';
 import { Root } from '../../../src/index';
 import { routesConfig } from '../../../src/main/configs/index';
 import { renderRoutes } from '../../../src/main/vendor/index';

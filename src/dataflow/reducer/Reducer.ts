@@ -7,6 +7,7 @@
  */
 import { fromJS, Map } from 'immutable';
 import { acceptActions, IAction } from 'mario-ducks';
+import { routerReducer } from 'react-router-redux';
 
 import { TEST_ACTION } from '../actions/index';
 
@@ -33,5 +34,6 @@ export const initialState = {
 };
 
 export default {
+  routerReducer,
   testReducer,
 };
