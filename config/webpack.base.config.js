@@ -17,6 +17,7 @@ const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const HappyPack = require('happypack');
 
 const srcPath = 'src';
+const browserSrcPath = 'browser';
 const assetsPath = 'assets';
 const modulesPath = 'node_modules';
 const distPath = 'public/static/dist';
@@ -60,7 +61,8 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        use: [ 'ts-loader' ]
+        use: [ 'happypack/loader?id=ts' ],
+        include: [ fullPath(browserSrcPath), fullPath(srcPath) ]
       },
       {
         test: /\.scss$/,
