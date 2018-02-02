@@ -29,6 +29,7 @@ export default class extends PureComponent<any, any> {
         <h2>Home</h2>
         <button onClick={this.handleClick}>go fosrward</button>
         <button onClick={() => {
+          this.props.dispatch(push('/test/not/found'));
           // NetworkClient.getInstance()
           //   .asyncObserve('http://localhost:9999/awp/pad/login/authUser_Pad.do?username=yinfeng&password=123', {})
           //   .subscribe((response: any) => {}, (error: Error) => {});

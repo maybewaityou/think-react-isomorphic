@@ -32,6 +32,11 @@ const routesConfig: any[] = [
           component: routeLoader(() => promise((resolve: any) => require.ensure([], (require: any) => resolve(require('../../../pages/GrandChild')), 'grand-child'))),
         }],
       },
+      {
+        path: '*',
+        // component: routeLoader(() => import(/* webpackChunkName: "not-found" */'../../../pages/NotFound')),
+        component: routeLoader(() => promise((resolve: any) => require.ensure([], (require: any) => resolve(require('../../../pages/NotFound')), 'not-found'))),
+      },
     ],
   },
 ];
