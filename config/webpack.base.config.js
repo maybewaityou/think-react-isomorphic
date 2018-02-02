@@ -9,7 +9,7 @@ const path = require('path');
 const NamedModulesPlugin = require('webpack/lib/NamedModulesPlugin');
 const ModuleConcatenationPlugin = require('webpack/lib/optimize/ModuleConcatenationPlugin');
 const CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
-// const DllReferencePlugin = require('webpack/lib/DllReferencePlugin');
+const DllReferencePlugin = require('webpack/lib/DllReferencePlugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -28,7 +28,7 @@ function fullPath(subPath) {
   return path.resolve(__dirname, `../${subPath}`);
 }
 
-// const dll = [ 'reactRouter', 'react', 'polyfill', 'mario' ];
+const dll = [ 'reactRouter', 'react', 'polyfill', 'mario' ];
 
 module.exports = {
   entry: {
@@ -36,8 +36,9 @@ module.exports = {
   },
   output: {
     // filename: '[name].bundle.[hash:8].js',
+    // chunkFilename: '[name].chunk.[chunkhash:8].js',
     filename: '[name].bundle.js',
-    chunkFilename: '[name].chunk.[chunkhash:8].js',
+    chunkFilename: '[name].chunk.js',
     path: fullPath(distPath),
     publicPath: '/'
   },
@@ -112,8 +113,8 @@ module.exports = {
     new ForkTsCheckerWebpackPlugin(),
     new NamedModulesPlugin(),
     new ModuleConcatenationPlugin(),
-    // ...dll.map(item => new DllReferencePlugin({
-    //   manifest: require(`${manifestRootPath}/${item}.manifest.json`)
-    // }))
+    ...dll.map(item => new DllReferencePlugin({
+      manifest: require(`${manifestRootPath}/${item}.manifest.json`)
+    }))
   ]
 };
