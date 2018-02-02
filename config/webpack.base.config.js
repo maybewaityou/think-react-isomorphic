@@ -21,7 +21,7 @@ const browserSrcPath = 'browser';
 const assetsPath = 'assets';
 const modulesPath = 'node_modules';
 const distPath = 'public/static/dist';
-const publicPath = 'public';
+const publicPath = '/static/dist/';
 const manifestRootPath = `../${distPath}:dll`;
 
 function fullPath(subPath) {
@@ -40,7 +40,7 @@ module.exports = {
     filename: '[name].bundle.js',
     chunkFilename: '[name].chunk.js',
     path: fullPath(distPath),
-    publicPath: '/'
+    publicPath: publicPath
   },
   resolve: {
     alias: {
