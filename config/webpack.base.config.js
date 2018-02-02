@@ -106,7 +106,7 @@ module.exports = {
       filename: '[name].[contenthash:8].css',
     }),
     // new HtmlWebpackPlugin({
-    //   title: 'think react',
+    //   title: 'think react isomorphic',
     //   template: `${assetsPath}/template/index.ejs`,
     //   favicon: `${assetsPath}/image/favicon.ico`
     // }),
