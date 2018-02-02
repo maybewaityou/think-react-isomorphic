@@ -9,7 +9,6 @@ import { bind } from 'mario-ducks';
 import { PureComponent } from 'mario-pure';
 import { log, NetworkClient } from 'mario-utilities';
 import * as React from 'react';
-import { matchPath } from 'react-router';
 import { goForward, push } from 'react-router-redux';
 
 import { Context } from '../main/context/index';
