@@ -17,6 +17,7 @@ import { log } from 'mario-utilities';
 import * as path from 'path';
 
 import cors from './middleware/cors';
+import gzip from './middleware/gzip';
 import proxy from './middleware/proxy';
 import uploader from './middleware/uploader';
 import Exception from './model/exception';
@@ -53,6 +54,8 @@ app.use(router.routes());
 app.use(router.allowedMethods());
 // upload
 app.use(uploader());
+// gzip
+app.use(gzip());
 // // proxy
 // app.use(proxy({
 //   host: 'http://10.240.81.230:7001',
