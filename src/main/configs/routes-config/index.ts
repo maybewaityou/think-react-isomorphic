@@ -11,6 +11,8 @@ import { IRouteConfig, renderRoutes, routeLoader } from '../../../main/vendor/in
 import Home from '../../../pages/Home';
 import Root from '../../../pages/index';
 
+const promise = (callback: any) => new Promise(callback);
+
 const routesConfig: any[] = [
   {
     component: Root,
@@ -22,16 +24,12 @@ const routesConfig: any[] = [
       },
       {
         path: '/child/:id',
-        component: routeLoader(() => import(/* webpackChunkName: "child" */'../../../pages/Child')),
-        // component: routeLoader(() => new Promise((resolve, reject) => {
-        //   require.ensure([], (require: any) => resolve(require('../../../pages/Child')), 'child');
-        // })),
+        // component: routeLoader(() => import(/* webpackChunkName: "child" */'../../../pages/Child')),
+        component: routeLoader(() => promise((resolve: any) => require.ensure([], (require: any) => resolve(require('../../../pages/Child')), 'child'))),
         routes: [{
           path: '/child/:id/grand-child',
-          component: routeLoader(() => import(/* webpackChunkName: "grand-child" */'../../../pages/GrandChild')),
-          // component: routeLoader(() => new Promise((resolve, reject) => {
-          //   require.ensure([], (require: any) => resolve(require('../../../pages/GrandChild')), 'grand-child');
-          // })),
+          // component: routeLoader(() => import(/* webpackChunkName: "grand-child" */'../../../pages/GrandChild')),
+          component: routeLoader(() => promise((resolve: any) => require.ensure([], (require: any) => resolve(require('../../../pages/GrandChild')), 'grand-child'))),
         }],
       },
     ],
