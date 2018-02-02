@@ -17,10 +17,10 @@ import { Root } from '../../src/index';
 import { networkClient } from '../../src/main/utilities/data/index';
 
 const w: any = window;
-const state = w.__INITIAL_STATE__;
+const stateFromServer = w.__INITIAL_STATE__;
 
-const initialState = Object.keys(state).reduce((obj: any, key: string) => {
-  obj[key] = fromJS(state[key]);
+const initialState = Object.keys(stateFromServer).reduce((obj: any, key: string) => {
+  obj[key] = fromJS(stateFromServer[key]);
   return obj;
 }, {});
 
