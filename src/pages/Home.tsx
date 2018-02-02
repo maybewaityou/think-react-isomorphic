@@ -33,7 +33,7 @@ export default class extends PureComponent<any, any> {
           // NetworkClient.getInstance()
           //   .asyncObserve('http://localhost:9999/awp/pad/login/authUser_Pad.do?username=yinfeng&password=123', {})
           //   .subscribe((response: any) => {}, (error: Error) => {});
-        }}>send request</button>
+        }}>link to not found</button>
         <button onClick={() => {
           this.props.dispatch(push('/child/123'));
         }}>link to child page</button>
