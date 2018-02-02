@@ -17,14 +17,14 @@ import { Root } from '../../src/index';
 import { networkClient } from '../../src/main/utilities/data/index';
 
 const w: any = window;
-const initialState = w.__INITIAL_STATE__;
+const state = w.__INITIAL_STATE__;
 
-const $initialState = Object.keys(initialState).reduce((obj: any, key: string) => {
-  obj[key] = fromJS(initialState[key]);
+const initialState = Object.keys(state).reduce((obj: any, key: string) => {
+  obj[key] = fromJS(state[key]);
   return obj;
 }, {});
 
-const store = configureStore($initialState, networkClient, rootReducer, rootLogic, rootEpic, middlewares);
+const store = configureStore(initialState, networkClient, rootReducer, rootLogic, rootEpic, middlewares);
 
 export default (
   <Provider store={store}>
