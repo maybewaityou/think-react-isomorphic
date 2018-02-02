@@ -33,7 +33,7 @@ export default {
     });
 
     await ctx.render('index', {
-      markup: renderToString(rehydrate(store)),
+      markup: renderToString(rehydrate(store, ctx)),
       targetState: store.getState(),
     });
     await next();

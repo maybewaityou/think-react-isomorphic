@@ -5,13 +5,20 @@
  * description:
  *
  */
+import * as Koa from 'koa';
 import { configureStore, Provider } from 'mario-ducks';
 import * as React from 'react';
+import { StaticRouter as Router } from 'react-router-dom';
 
 import { Root } from '../../../src/index';
 
-export default (store: any) => (
+export default (store: any, context: Koa.Context) => (
   <Provider store={store}>
-    <Root />
+    <Router
+    location={context.request.url}
+    context={{}}
+    >
+      <Root />
+    </Router>
   </Provider>
 );

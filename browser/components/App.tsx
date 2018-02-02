@@ -8,6 +8,7 @@
 import { fromJS } from 'immutable';
 import { configureStore, Provider } from 'mario-ducks';
 import * as React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import { rootEpic } from '../../src/dataflow/epic/index';
 import { rootLogic } from '../../src/dataflow/logic/index';
@@ -28,6 +29,8 @@ const store = configureStore(initialState, networkClient, rootReducer, rootLogic
 
 export default (
   <Provider store={store}>
-    <Root />
+    <Router>
+      <Root />
+    </Router>
   </Provider>
 );
