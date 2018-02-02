@@ -11,14 +11,16 @@ import * as React from 'react';
 import { StaticRouter as Router } from 'react-router-dom';
 
 import { Root } from '../../../src/index';
+import { routesConfig } from '../../../src/main/configs/index';
+import { renderRoutes } from '../../../src/main/vendor/index';
 
 export default (store: any, context: Koa.Context) => (
   <Provider store={store}>
     <Router
-    location={context.request.url}
-    context={{}}
+      location={context.request.url}
+      context={context}
     >
-      <Root />
+      {renderRoutes(routesConfig)}
     </Router>
   </Provider>
 );

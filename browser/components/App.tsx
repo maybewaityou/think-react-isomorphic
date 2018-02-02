@@ -15,7 +15,9 @@ import { rootLogic } from '../../src/dataflow/logic/index';
 import middlewares from '../../src/dataflow/middleware/index';
 import { rootReducer } from '../../src/dataflow/reducer/index';
 import { Root } from '../../src/index';
+import { routesConfig } from '../../src/main/configs/index';
 import { networkClient } from '../../src/main/utilities/data/index';
+import { renderRoutes } from '../../src/main/vendor/index';
 
 const w: any = window;
 const stateFromServer = w.__INITIAL_STATE__;
@@ -30,7 +32,7 @@ const store = configureStore(initialState, networkClient, rootReducer, rootLogic
 export default (
   <Provider store={store}>
     <Router>
-      <Root />
+      {renderRoutes(routesConfig)}
     </Router>
   </Provider>
 );

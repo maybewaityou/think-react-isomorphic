@@ -8,3 +8,4 @@
 
 export { default as renderRoutes } from './renderRoutes';
 export { default as routeLoader } from './routeLoader';
+export { default as IRouteConfig } from './PropTypes';

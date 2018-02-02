@@ -24,7 +24,7 @@ const router = new Router({
 
 // RESTful
 router
-  .get('/index', App.index)
+  .get('/', App.index)
   .get('/checkForUpdates', HotUpdate.checkForUpdates)
   // http://localhost:9999/server/download?fileName=bundle.zip&platform=ios&moduleFolder=main&isIncrementalPacket=true
   .get('/download', HotUpdate.download);

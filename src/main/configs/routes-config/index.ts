@@ -5,35 +5,35 @@
  * description:
  *
  */
-import React from 'react';
+import * as React from 'react';
 
-import { renderRoutes, routeLoader } from '@vendor';
+import { IRouteConfig, renderRoutes, routeLoader } from '../../../main/vendor/index';
 import Child from '../../../pages/Child';
 import GrandChild from '../../../pages/GrandChild';
-import { HomeContainer } from '../../../pages/home/index';
+import Home from '../../../pages/Home';
 import Root from '../../../pages/index';
 
-export default [
+const routesConfig: any[] = [
   {
     component: Root,
     routes: [
       {
         path: '/',
         exact: true,
-        component: HomeContainer,
-      },
-      {
-        path: '/login',
-        component: routeLoader(() => import(/* webpackChunkName: "login" */'../../../pages/login/container/LoginContainer')),
+        component: Home,
       },
       {
         path: '/child/:id',
-        component: routeLoader(() => import(/* webpackChunkName: "child" */'../../../pages/Child')),
+        component: Child,
+        // component: routeLoader(() => require(/* webpackChunkName: "child" */'../../../pages/Child')),
         routes: [{
           path: '/child/:id/grand-child',
-          component: routeLoader(() => import(/* webpackChunkName: "grand-child" */'../../../pages/GrandChild')),
+          // component: routeLoader(() => require(/* webpackChunkName: "grand-child" */'../../../pages/GrandChild')),
+          component: GrandChild,
         }],
       },
     ],
   },
 ];
+
+export default routesConfig;

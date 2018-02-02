@@ -6,4 +6,4 @@
  *
  */
 
-export { routeLoader, renderRoutes } from './react-router/index';
+export { routeLoader, renderRoutes, IRouteConfig } from './react-router/index';

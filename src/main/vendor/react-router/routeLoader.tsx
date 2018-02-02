@@ -5,12 +5,13 @@
  * description:
  *
  */
-import React from 'react';
+import { PureComponent } from 'mario-pure';
+import * as React from 'react';
 
 import { AsyncRoute, IRouteConfigComponentProps } from './PropTypes';
 
 export default (asyncRoute: AsyncRoute) => (
-  class extends React.PureComponent<IRouteConfigComponentProps<any>, any> {
+  class extends PureComponent<IRouteConfigComponentProps<any>, any> {
 
     constructor(props: Readonly<IRouteConfigComponentProps<any>>) {
       super(props);
