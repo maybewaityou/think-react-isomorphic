@@ -17,7 +17,7 @@ import middlewares from '../../src/dataflow/middleware/index';
 import { initialState, rootReducer } from '../../src/dataflow/reducer/index';
 import { Root } from '../../src/index';
 import { networkClient } from '../../src/main/utilities/data/index';
-import App from './components/App';
+import rehydrate from './components/rehydrate';
 
 export default {
 
@@ -33,7 +33,7 @@ export default {
     });
 
     await ctx.render('index', {
-      markup: renderToString(App(store)),
+      markup: renderToString(rehydrate(store)),
       targetState: store.getState(),
     });
     await next();
