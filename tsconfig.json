@@ -2,6 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "iconv-lite": ["node_modules/iconv-lite/lib/index.d.ts"],
       "redux": ["node_modules/redux/index.d.ts"],
       "redux-logic": ["node_modules/redux-logic/index.d.ts"],
       "redux-observable": ["node_modules/redux-observable/index.d.ts"],
@@ -35,7 +36,7 @@
     "preserveConstEnums": true,
     "allowJs": false,
     "sourceMap": true,
-    "removeComments": true,
+    "removeComments": false,
     "pretty": true,
     "skipLibCheck": true,
     "lib": [
