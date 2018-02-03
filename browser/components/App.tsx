@@ -12,13 +12,13 @@ import * as React from 'react';
 import { ConnectedRouter as Router } from 'react-router-redux';
 
 import { rootEpic } from '../../src/dataflow/epic/index';
-import history from '../../src/dataflow/history/index';
 import { rootLogic } from '../../src/dataflow/logic/index';
 import middlewares from '../../src/dataflow/middleware/index';
 import { rootReducer } from '../../src/dataflow/reducer/index';
 import { Root } from '../../src/index';
 import { routesConfig } from '../../src/main/configs/index';
 import { networkClient } from '../../src/main/utilities/data/index';
+import { history } from '../../src/main/vendor/index';
 import { renderRoutes } from '../../src/main/vendor/index';
 
 const w: any = window;

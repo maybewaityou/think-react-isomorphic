@@ -9,6 +9,4 @@ import createHistory from 'history/createBrowserHistory';
 
 const __BROWSER__ = typeof window !== 'undefined';
 
-const history = __BROWSER__ ? createHistory() : undefined;
-
-export default history;
+export const history = __BROWSER__ ? createHistory() : undefined;
