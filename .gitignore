@@ -54,6 +54,7 @@ buck-out/
 
 dist
 dist:dll
+.cache-loader
 .uglify-cache
 .uglify-dll-cache
 stats.json

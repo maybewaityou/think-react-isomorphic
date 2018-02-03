@@ -62,7 +62,7 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        use: [ 'happypack/loader?id=ts' ],
+        use: [ 'cache-loader', 'happypack/loader?id=ts' ],
         include: [ fullPath(browserSrcPath), fullPath(srcPath) ]
       },
       {

@@ -80,6 +80,7 @@
     "@types/request-promise-native": "^1.0.10",
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.1",
+    "cache-loader": "^1.2.0",
     "chai": "^4.1.2",
     "clean-webpack-plugin": "^0.1.18",
     "css-loader": "^0.28.9",
